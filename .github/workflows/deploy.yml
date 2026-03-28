@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # 【重要】以下を新しく作成したstg環境の公開フォルダパスに変更してください
           # 例: /llc-beready.com/public_html/stg.gcg-new.llc-beready.com/
-          server-dir: /llc-beready.com/public_html/stg.gcg-newlp.llc-beready.com
+          server-dir: /llc-beready.com/public_html/stg.gcg-newlp.llc-beready.com/
           exclude: |
             **/.git*
             **/.git*/**
