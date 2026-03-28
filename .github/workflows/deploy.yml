@@ -1,0 +1,33 @@
+name: Deploy to Xserver
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+      
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # 【重要】以下を新しく作成したstg環境の公開フォルダパスに変更してください
+          # 例: /llc-beready.com/public_html/stg.gcg-new.llc-beready.com/
+          server-dir: /YOUR_DOMAIN_DIRECTORY/public_html/YOUR_NEW_STG_DOMAIN/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .gitignore
+            README.md
+            package.json
+            package-lock.json
+            src/**
