@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -v http://127.0.0.1:3845/)",
+      "Bash(claude mcp:*)",
+      "mcp__figma-desktop__get_design_context",
+      "mcp__figma-desktop__get_screenshot",
+      "Bash(curl:*)",
+      "Bash(npx sass:*)",
+      "Bash(sed -i '' 's/var\\(--fill-0, black\\)/black/g' /Users/okuyamatakashishi/Sites/gcg-new/assets/images/gcg-logo.svg)",
+      "Bash(sed -i '' 's/var\\(--fill-0, #231815\\)/#231815/g' /Users/okuyamatakashishi/Sites/gcg-new/assets/images/gcg-logo-text.svg)",
+      "Bash(python3:*)",
+      "Bash(mv /Users/okuyamatakashishi/Sites/gcg-new/assets/images/features-bg.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-card*.svg /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-num*.svg /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-line*.svg /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-photo*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-icon*.svg /Users/okuyamatakashishi/Sites/gcg-new/assets/images/)",
+      "Bash(ls /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature*)",
+      "Skill(update-config)",
+      "Bash(jq:*)",
+      "Bash(osascript:*)",
+      "Bash(cp /tmp/feature-pen-icon.svg /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-pen01.svg)",
+      "Bash(cp /tmp/feature-pen-parts.svg /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-pen01-parts.svg)",
+      "Bash(convert -background none -density 300 /tmp/feature-line01.svg -resize 622x10 /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-line01.png)",
+      "Bash(sed 's/var\\(--fill-0, #1A1311\\)/#1A1311/g' /tmp/feature-line01.svg)",
+      "Bash(magick -background none -density 300 /tmp/feature-line01-fixed.svg -resize 622x10 /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-line01.png)",
+      "mcp__figma-desktop__get_metadata",
+      "Bash(ls -la /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-card*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-num*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-line*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-icon*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-pen*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-photo-mask*.svg)",
+      "Bash(cd:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

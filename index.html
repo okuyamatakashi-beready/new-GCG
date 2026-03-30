@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="お子様の可能性を広げる第一歩は、ここから - GCG">
     <title>GCG - 生徒募集中</title>
-    <!-- cssやフォントの読み込みは後ほど追加します -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -13,14 +18,13 @@
          HEADER
     ========================= -->
     <header class="header">
+        <img src="assets/images/header-bg.png" alt="" class="header__bg">
         <div class="header__inner">
             <h1 class="header__logo">
-                <!-- Gakken / GCG ロゴ -->
+                <a href="/">
+                    <img src="assets/images/logo.svg" alt="Gakken" width="202" height="42">
+                </a>
             </h1>
-            <nav class="header__nav">
-                <a href="#cta" class="btn btn--trial">体験会<br>申し込み</a>
-                <a href="#contact" class="btn btn--contact">お問い合わせ</a>
-            </nav>
         </div>
     </header>
 
@@ -29,8 +33,17 @@
              HERO (メインビジュアル)
         ========================= -->
         <section class="hero" id="hero">
+            <div class="hero__bg">
+                <img src="assets/images/hero-bg.png" alt="">
+            </div>
             <div class="hero__inner">
-                <!-- 「4月10日(水)グランドオープン！」「生徒募集中」などのテキストと子供の画像 -->
+                <img src="assets/images/mv-inner-pc.png" alt="知育×探究教室 GCG - 有明ガーデンにて4月10日(金)グランドオープン！生徒募集中" class="hero__main">
+                <img src="assets/images/mv-img02.png" alt="" class="hero__img02">
+                <img src="assets/images/mv-img03.png" alt="" class="hero__img03">
+                <div class="hero__banners">
+                    <img src="assets/images/mv-banner01-pc.png" alt="今なら入会金0円（4月入会の方対象）" class="hero__banner">
+                    <img src="assets/images/mv-banner02-pc.png" alt="体験会受付中" class="hero__banner">
+                </div>
             </div>
         </section>
 
@@ -38,8 +51,28 @@
              CONCEPT (導入部・事業説明)
         ========================= -->
         <section class="concept" id="concept">
+            <img src="assets/images/concept-top.png" alt="" class="concept__top">
+            <div class="concept__bg">
+                <img src="assets/images/hero-bg.png" alt="">
+            </div>
             <div class="concept__inner">
-                <!-- 「自ら考える力...」のテキスト、GCGロゴの説明 -->
+                <div class="concept__catch">
+                    <p class="concept__catch-text">「正解を覚えるだけ」の教育に<br>不安を感じていませんか？</p>
+                </div>
+                <img src="assets/images/concept-arrow.svg" alt="" class="concept__arrow">
+                <div class="concept__lead">
+                    <p class="concept__lead-line">これからの世界に必要なのは、</p>
+                    <p class="concept__lead-line"><span class="concept__lead-highlight">「正解」よりも「問いを立てる力」</span></p>
+                </div>
+                <div class="concept__logo">
+                    <img src="assets/images/gcg-logo-combined.svg" alt="GCG - Gakken Creative Gateway">
+                </div>
+                <div class="concept__desc">
+                    <p>Gakken Creative Gateway（GCG）は、</p>
+                    <p>「思考力×創造力×自己表現力」を育む、まったく新しい学び場。</p>
+                    <p>小学校受験レベルの思考力を育みながら、</p>
+                    <p>子ども自身の好奇心と違和感を出発点にした知育×探究教室です。</p>
+                </div>
             </div>
         </section>
 
@@ -47,8 +80,78 @@
              FEATURES (教育の特長)
         ========================= -->
         <section class="features" id="features">
+            <img src="assets/images/features-bg.png" alt="" class="features__bg">
             <div class="features__inner">
-                <!-- 「教育の特長」タイトルと、3つの特徴カード（思考力・表現力など） -->
+                <h2 class="features__title">授業の特長</h2>
+                <div class="features__cards">
+                    <!-- Card 01 -->
+                    <div class="feature-card">
+                        <img src="assets/images/feature-card01-bg.png" alt="" class="feature-card__bg">
+                        <div class="feature-card__content">
+                            <div class="feature-card__header">
+                                <div class="feature-card__num-wrap">
+                                    <img src="assets/images/feature-num01.png" alt="" class="feature-card__num">
+                                    <span class="feature-card__num-text">1</span>
+                                </div>
+                                <h3 class="feature-card__name">探究思考プログラム</h3>
+                            </div>
+                            <img src="assets/images/feature-line01.png" alt="" class="feature-card__line">
+                            <div class="feature-card__text">
+                                <p><span class="feature-card__accent">「なぜ？」を深める習慣</span><span class="feature-card__small">を育てます。</span></p>
+                                <p><span class="feature-card__accent">小学校受験レベルの思考力</span><span class="feature-card__small">を、</span></p>
+                                <p class="feature-card__small">楽しみながら自然に身につけます。</p>
+                            </div>
+                        </div>
+                        <div class="feature-card__photo">
+                            <img src="assets/images/feature-photo01.png" alt="">
+                        </div>
+                    </div>
+                    <!-- Card 02 -->
+                    <div class="feature-card">
+                        <img src="assets/images/feature-card02-bg.png" alt="" class="feature-card__bg">
+                        <div class="feature-card__content">
+                            <div class="feature-card__header">
+                                <div class="feature-card__num-wrap">
+                                    <img src="assets/images/feature-num02.png" alt="" class="feature-card__num">
+                                    <span class="feature-card__num-text">2</span>
+                                </div>
+                                <h3 class="feature-card__name">創造・表現ワーク</h3>
+                            </div>
+                            <img src="assets/images/feature-line02.png" alt="" class="feature-card__line">
+                            <div class="feature-card__text">
+                                <p class="feature-card__small">子ども自身のアイデアを形にする体験。</p>
+                                <p class="feature-card__small">描く・作る・伝える力が、</p>
+                                <p><span class="feature-card__accent">本物の自己表現力</span><span class="feature-card__small">になります。</span></p>
+                            </div>
+                        </div>
+                        <div class="feature-card__photo">
+                            <img src="assets/images/feature-photo02.png" alt="">
+                        </div>
+                    </div>
+                    <!-- Card 03 -->
+                    <div class="feature-card">
+                        <img src="assets/images/feature-card03-bg.png" alt="" class="feature-card__bg">
+                        <div class="feature-card__content">
+                            <div class="feature-card__header">
+                                <div class="feature-card__num-wrap">
+                                    <img src="assets/images/feature-num03.png" alt="" class="feature-card__num">
+                                    <span class="feature-card__num-text">3</span>
+                                </div>
+                                <h3 class="feature-card__name">少人数の安心環境</h3>
+                            </div>
+                            <img src="assets/images/feature-line03.png" alt="" class="feature-card__line">
+                            <div class="feature-card__text">
+                                <p class="feature-card__small">最大で定員7名の小規模クラス。</p>
+                                <p class="feature-card__small">0歳から通えるため、</p>
+                                <p><span class="feature-card__small">早期から</span><span class="feature-card__accent">豊かな思考習慣</span><span class="feature-card__small">を</span></p>
+                                <p class="feature-card__small">丁寧に育みます。</p>
+                            </div>
+                        </div>
+                        <div class="feature-card__photo">
+                            <img src="assets/images/feature-photo03.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -57,7 +160,36 @@
         ========================= -->
         <section class="courses" id="courses">
             <div class="courses__inner">
-                <!-- 「お子様に合わせた2つのコース」タイトル、左右にスライド/切り替えできるコース表と料金表 -->
+                <h2 class="courses__title">お子様に合わせた3つのコース</h2>
+                <div class="courses__slider">
+                    <div class="swiper courses-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 01: 0,1,2歳コース -->
+                            <div class="swiper-slide">
+                                <div class="course-slide">
+                                    <img src="assets/images/courses-slide01-bg.png" alt="" class="course-slide__bg">
+                                    <h3 class="course-slide__title">0、1、2歳コース</h3>
+                                    <div class="course-slide__card">
+                                        <img src="assets/images/courses-card-bg.png" alt="" class="course-slide__card-bg">
+                                        <div class="course-slide__card-inner">
+                                            <span class="course-slide__badge course-slide__badge--pink">コース内容</span>
+                                            <ul class="course-slide__list">
+                                                <li>五感を使った多様な体験を通じて、「感じる・気づく・試す」力を育てます。</li>
+                                                <li>手や身体を動かしながら、かたち・数・ことば・関係性に触れ、世界を自分なりに捉える土台をつくります。</li>
+                                                <li>「なぜ？」「どうなる？」という小さな探究を大切にし、自ら考えようとする姿勢を育みます。</li>
+                                                <li>遊びの中で、集中力・認識力・思考の芽を育て、将来の創造的な学びへとつながる基礎を築きます。</li>
+                                            </ul>
+                                            <img src="assets/images/cource01-img.png" alt="0、1、2歳コース詳細" class="course-slide__img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination courses-pagination"></div>
+                    </div>
+                    <div class="courses-arrow courses-arrow--prev"><img src="assets/images/courses-arrow-prev.png" alt="前へ"></div>
+                    <div class="courses-arrow courses-arrow--next"><img src="assets/images/courses-arrow-next.png" alt="次へ"></div>
+                </div>
             </div>
         </section>
 
@@ -66,7 +198,53 @@
         ========================= -->
         <section class="admission" id="admission">
             <div class="admission__inner">
-                <!-- 入会金、施設維持費、その他注意事項などの表・テキスト -->
+                <div class="admission__table">
+                    <div class="admission__header">
+                        <div class="admission__header-cell">
+                            <span class="admission__badge">入会金</span>
+                        </div>
+                        <div class="admission__header-cell">
+                            <span class="admission__badge">施設教材費</span>
+                        </div>
+                    </div>
+                    <div class="admission__body">
+                        <div class="admission__body-left">
+                            <div class="admission__price-block">
+                                <span class="admission__price">22,000</span>
+                                <span class="admission__yen">円</span><small class="admission__tax">(税込み)</small>
+                            </div>
+                        </div>
+                        <div class="admission__body-right">
+                            <div class="admission__row">
+                                <span class="admission__course admission__course--pink"><img src="assets/images/admission-course-pink.png" alt="" class="admission__course-bg"><span class="admission__course-text">0、1、2歳コース</span></span>
+                                <div class="admission__price-wrap">
+                                    <span class="admission__price">11,000</span>
+                                    <span class="admission__yen">円</span><small class="admission__tax">(税込み)</small><span class="admission__per">/半年</span>
+                                </div>
+                            </div>
+                            <div class="admission__row">
+                                <span class="admission__course admission__course--blue"><img src="assets/images/admission-course-blue.png" alt="" class="admission__course-bg"><span class="admission__course-text">創造思考コース</span></span>
+                                <div class="admission__price-wrap">
+                                    <span class="admission__price">22,000</span>
+                                    <span class="admission__yen">円</span><small class="admission__tax">(税込み)</small><span class="admission__per">/半年</span>
+                                </div>
+                            </div>
+                            <div class="admission__row">
+                                <span class="admission__course admission__course--green"><img src="assets/images/admission-course-green.png" alt="" class="admission__course-bg"><span class="admission__course-text">読解探究コース</span></span>
+                                <div class="admission__price-wrap">
+                                    <span class="admission__price">22,000</span>
+                                    <span class="admission__yen">円</span><small class="admission__tax">(税込み)</small><span class="admission__per">/半年</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admission__notes">
+                    <p>※各コース定員は目安であり、お申し込み状況や編成の都合により変更となる場合がございます。</p>
+                    <p>※通室振替制度あり(教室規定に則っての取得となります。)</p>
+                    <p>※きょうだい割引制度あり</p>
+                    <p>※小学校受験サポートについて志望校に合わせての「願書の書き方」、「面接演習」等サポートいたします。詳しくはお尋ねください。</p>
+                </div>
             </div>
         </section>
 
@@ -74,8 +252,52 @@
              REVIEWS & GALLERY (お客様の声とギャラリー)
         ========================= -->
         <section class="reviews" id="reviews">
+            <img src="assets/images/reviews-bg.png" alt="" class="reviews__bg">
             <div class="reviews__inner">
-                <!-- 「ご利用いただいたお客様の声」タイトル、4つの評価カードと下部の写真ギャラリー -->
+                <h2 class="reviews__title">2025年秋冬に体験会を開催</h2>
+                <p class="reviews__lead">ご参加いただいた保護者様にアンケートを実施し、多くの方にご満足のお声をいただきました。</p>
+                <div class="reviews__cards">
+                    <div class="review-card">
+                        <img src="assets/images/review-card-bg.png" alt="" class="review-card__bg">
+                        <span class="review-card__label">総合満足度</span>
+                        <img src="assets/images/review-card__label-border.png" alt="" class="review-card__label-border">
+                        <img src="assets/images/review-card01-star.png" alt="4.00/5" class="review-card__stars">
+                        <div class="review-card__score"><strong>4.00</strong><span>/5</span></div>
+                    </div>
+                    <div class="review-card">
+                        <img src="assets/images/review-card-bg.png" alt="" class="review-card__bg">
+                        <span class="review-card__label">スタッフ対応</span>
+                        <img src="assets/images/review-card__label-border.png" alt="" class="review-card__label-border">
+                        <img src="assets/images/review-card02-star.png" alt="4.39/5" class="review-card__stars">
+                        <div class="review-card__score"><strong>4.39</strong><span>/5</span></div>
+                    </div>
+                    <div class="review-card">
+                        <img src="assets/images/review-card-bg.png" alt="" class="review-card__bg">
+                        <span class="review-card__label">新たな教育価値を感じた</span>
+                        <img src="assets/images/review-card__label-border.png" alt="" class="review-card__label-border">
+                        <img src="assets/images/review-card03-star.png" alt="4.40/5" class="review-card__stars">
+                        <div class="review-card__score"><strong>4.40</strong><span>/5</span></div>
+                    </div>
+                    <div class="review-card">
+                        <img src="assets/images/review-card-bg.png" alt="" class="review-card__bg">
+                        <span class="review-card__label">お子様の没入度</span>
+                        <img src="assets/images/review-card__label-border.png" alt="" class="review-card__label-border">
+                        <img src="assets/images/review-card04-star.png" alt="4.55/5" class="review-card__stars">
+                        <div class="review-card__score"><strong>4.55</strong><span>/5</span></div>
+                    </div>
+                </div>
+                <p class="reviews__note">※2025年開催幼児PJ参加者様アンケートより</p>
+                <div class="reviews__gallery">
+                    <div class="reviews__gallery-row">
+                        <img src="assets/images/reviews-photo01.png" alt="" class="reviews__photo">
+                        <img src="assets/images/reviews-photo02.png" alt="" class="reviews__photo">
+                        <img src="assets/images/reviews-photo03.png" alt="" class="reviews__photo">
+                    </div>
+                    <div class="reviews__gallery-row">
+                        <img src="assets/images/reviews-photo04.png" alt="" class="reviews__photo">
+                        <img src="assets/images/reviews-photo05.png" alt="" class="reviews__photo">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -84,8 +306,19 @@
         ========================= -->
         <section class="cta" id="cta">
             <div class="cta__inner">
-                <!-- 「お子様の可能性を広げる第一歩は、ここから」 -->
-                <!-- 体験教室申し込みボタンとInstagramフォローボタン -->
+                <h2 class="cta__title">お子様の可能性を<br>広げる第一歩は、今日から。</h2>
+                <a href="#" class="cta__btn">
+                    <img src="assets/images/cta-btn-bg.png" alt="" class="cta__btn-bg">
+                    <div class="cta__btn-content">
+                        <p class="cta__btn-heading">まずは体験会に<br>ご参加ください</p>
+                        <span class="cta__btn-link">お申し込みはこちらから <img src="assets/images/cta-arrow.png" alt="" class="cta__btn-arrow"></span>
+                    </div>
+                </a>
+                <p class="cta__instagram-label">Instagramはこちら</p>
+                <p class="cta__follow">＼ Follow Me! ／</p>
+                <a href="#" class="cta__instagram-icon">
+                    <img src="assets/images/cta-instagram.png" alt="Instagram" width="100" height="100">
+                </a>
             </div>
         </section>
     </main>
@@ -95,12 +328,59 @@
     ========================= -->
     <footer class="footer">
         <div class="footer__inner">
-            <!-- 連絡先、住所等の会社情報 -->
+            <h2 class="footer__title">概 要</h2>
+            <div class="footer__columns">
+                <div class="footer__col">
+                    <h3 class="footer__heading">教室所在地</h3>
+                    <p class="footer__name">有明ガーデン</p>
+                    <p class="footer__text">〒135-0063</p>
+                    <p class="footer__text">東京都江東区有明2丁目1−8 有明ガーデン4F</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__heading">運営会社</h3>
+                    <p class="footer__name">株式会社 学研Link</p>
+                    <div class="footer__phone">
+                        <img src="assets/images/footer-phone.png" alt="0120-327-341">
+                    </div>
+                    <p class="footer__text footer__text--small">受付／月～土曜 9:00～17:00（祝・休日を除く）</p>
+                    <p class="footer__text">〒141-8411</p>
+                    <p class="footer__text">東京都品川区西五反田二丁目11番8号</p>
+                    <a href="#" class="footer__privacy">>プライバシーポリシーはこちらから</a>
+                </div>
+            </div>
         </div>
         <div class="footer__bottom">
-            <!-- Gakkenのロゴ -->
+            <img src="assets/images/footer-gakken.png" alt="Gakken" class="footer__logo">
         </div>
     </footer>
 
+    <!-- =========================
+         FLOAT BUTTONS
+    ========================= -->
+    <nav class="float-nav">
+        <a href="#cta" class="float-btn float-btn--trial">
+            <img src="assets/images/float-btn01.svg" alt="" class="float-btn__bg">
+            <span class="float-btn__text">体験会<br>お申し込み</span>
+        </a>
+        <a href="#contact" class="float-btn float-btn--contact">
+            <img src="assets/images/float-btn02.svg" alt="" class="float-btn__bg">
+            <span class="float-btn__text">資料請求<br>お問い合わせ</span>
+        </a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+    new Swiper('.courses-swiper', {
+      loop: true,
+      pagination: {
+        el: '.courses-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.courses-arrow--next',
+        prevEl: '.courses-arrow--prev',
+      },
+    });
+    </script>
 </body>
 </html>
