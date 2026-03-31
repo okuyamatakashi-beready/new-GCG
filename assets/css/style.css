@@ -1,3 +1,16 @@
+/* =========================
+   FADE-IN ANIMATION
+========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .header {
   position: relative;
   height: 116px;
@@ -990,4 +1003,273 @@
 }
 .float-btn--contact .float-btn__text {
   color: #fff;
+}
+
+/* =========================
+   SP RESPONSIVE (max-width: 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* --- HEADER --- */
+  .header {
+    height: 60px;
+  }
+  .header__inner {
+    padding: 0 16px;
+  }
+  .header__logo img {
+    width: 103px;
+  }
+
+  /* --- CONCEPT --- */
+  .concept__inner {
+    margin-top: -40px;
+    padding: 0 16px 40px;
+  }
+  .concept__catch-text {
+    font-size: 24px;
+  }
+  .concept__arrow {
+    width: 80%;
+    margin: -40px auto 20px;
+  }
+  .concept__lead-line {
+    font-size: 20px;
+  }
+  .concept__logo img {
+    width: 200px;
+  }
+  .concept__desc {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  /* --- FEATURES --- */
+  .features {
+    padding: 80px 0 80px;
+  }
+  .features__inner {
+    padding: 0 16px;
+  }
+  .features__title {
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+  .features__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .feature-card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    min-height: 420px;
+  }
+  .feature-card__name {
+    font-size: 24px;
+  }
+  .feature-card__accent {
+    font-size: 20px;
+  }
+  .feature-card__small {
+    font-size: 16px;
+  }
+  .feature-card__text p {
+    white-space: normal;
+  }
+
+  /* --- COURSES --- */
+  .courses {
+    padding: 40px 0 0;
+  }
+  .courses__title {
+    font-size: 29px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+  .course-slide {
+    padding: 40px 0 80px;
+  }
+  .course-slide__title {
+    font-size: 29px;
+  }
+  .course-slide__subtitle {
+    font-size: 17px;
+  }
+  .course-slide__card {
+    padding: 20px 10px;
+  }
+  .course-slide__card-inner {
+    padding: 16px 20px;
+  }
+  .course-slide__badge {
+    font-size: 15px;
+  }
+  .course-slide__list {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .course-slide__img {
+    width: 100%;
+  }
+  .courses-arrow img {
+    width: 24px;
+  }
+  .courses-arrow--prev {
+    left: 8px;
+  }
+  .courses-arrow--next {
+    right: 8px;
+  }
+  .courses-pagination {
+    bottom: 60px !important;
+  }
+
+  /* --- ADMISSION --- */
+  .admission {
+    padding: 40px 0 60px;
+  }
+  .admission__inner {
+    padding: 0 16px;
+  }
+  .admission__header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .admission__header-cell:first-child,
+  .admission__header-cell:last-child {
+    width: 100%;
+  }
+  .admission__body {
+    flex-direction: column;
+  }
+  .admission__body-left {
+    width: 100%;
+    padding: 20px;
+  }
+  .admission__body-right {
+    width: 100%;
+    padding: 20px 0;
+  }
+  .admission__badge {
+    font-size: 20px;
+  }
+  .admission__price {
+    font-size: 27px;
+  }
+  .admission__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+  }
+  .admission__price-wrap {
+    margin-left: 0;
+  }
+  .admission__notes {
+    font-size: 12px;
+  }
+
+  /* --- REVIEWS --- */
+  .reviews {
+    padding: 60px 0 40px;
+  }
+  .reviews__title {
+    font-size: 29px;
+    margin-bottom: 16px;
+  }
+  .reviews__lead {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+  .reviews__cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .review-card {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  .review-card__label {
+    font-size: 20px;
+  }
+  .review-card__score strong {
+    font-size: 60px;
+  }
+  .review-card__score span {
+    font-size: 22px;
+  }
+  .reviews__gallery-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .reviews__photo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* --- CTA --- */
+  .cta {
+    padding: 60px 0 40px;
+  }
+  .cta__title {
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+  .cta__btn {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 558 / 203;
+    margin-bottom: 40px;
+  }
+  .cta__btn-heading {
+    font-size: 24px;
+  }
+  .cta__btn-link {
+    font-size: 16px;
+  }
+  .cta__instagram-label {
+    font-size: 24px;
+  }
+  .cta__follow {
+    font-size: 33px;
+  }
+
+  /* --- FOOTER --- */
+  .footer__inner {
+    padding: 60px 16px 60px;
+  }
+  .footer__title {
+    font-size: 29px;
+    margin-bottom: 60px;
+  }
+  .footer__columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer__heading {
+    font-size: 20px;
+  }
+  .footer__name {
+    font-size: 24px;
+  }
+  .footer__text {
+    font-size: 15px;
+  }
+
+  /* --- FLOAT NAV --- */
+  .float-nav {
+    right: 8px;
+    gap: 4px;
+  }
+  .float-btn {
+    width: 72px;
+    height: 74px;
+  }
+  .float-btn__text {
+    font-size: 14px;
+  }
 }
