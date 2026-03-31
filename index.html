@@ -37,12 +37,18 @@
                 <img src="assets/images/hero-bg.png" alt="">
             </div>
             <div class="hero__inner">
-                <img src="assets/images/mv-inner-pc.png" alt="知育×探究教室 GCG - 有明ガーデンにて4月10日(金)グランドオープン！生徒募集中" class="hero__main">
+                <picture class="hero__main-picture">
+                    <source srcset="assets/images/mv-inner-sp.png" media="(max-width: 768px)">
+                    <img src="assets/images/mv-inner-pc.png" alt="知育×探究教室 GCG - 有明ガーデンにて4月10日(金)グランドオープン！生徒募集中" class="hero__main">
+                </picture>
                 <img src="assets/images/mv-img02.png" alt="" class="hero__img02">
                 <img src="assets/images/mv-img03.png" alt="" class="hero__img03">
-                <div class="hero__banners">
+                <div class="hero__banners hero__banners--pc">
                     <img src="assets/images/mv-banner01-pc.png" alt="今なら入会金0円（4月入会の方対象）" class="hero__banner">
                     <img src="assets/images/mv-banner02-pc.png" alt="体験会受付中" class="hero__banner">
+                </div>
+                <div class="hero__banners hero__banners--sp">
+                    <img src="assets/images/mv-banner-sp.png" alt="今なら入会金0円・体験会受付中" class="hero__banner-sp">
                 </div>
             </div>
         </section>
@@ -124,7 +130,7 @@
                                 <p><span class="feature-card__accent">本物の自己表現力</span><span class="feature-card__small">になります。</span></p>
                             </div>
                         </div>
-                        <div class="feature-card__photo">
+                        <div class="feature-card__photo feature-card__photo--02">
                             <img src="assets/images/feature-photo02.png" alt="">
                         </div>
                     </div>
@@ -147,7 +153,7 @@
                                 <p class="feature-card__small">丁寧に育みます。</p>
                             </div>
                         </div>
-                        <div class="feature-card__photo">
+                        <div class="feature-card__photo feature-card__photo--03">
                             <img src="assets/images/feature-photo03.png" alt="">
                         </div>
                     </div>
@@ -169,7 +175,7 @@
                                 <div class="course-slide">
                                     <img src="assets/images/courses-slide01-bg.png" alt="" class="course-slide__bg">
                                     <h3 class="course-slide__title">0、1、2歳コース</h3>
-                                    <div class="course-slide__card">
+                                    <div class="course-slide__card course-slide__card--01">
                                         <img src="assets/images/courses-card-bg.png" alt="" class="course-slide__card-bg">
                                         <div class="course-slide__card-inner">
                                             <span class="course-slide__badge course-slide__badge--pink">コース内容</span>
@@ -180,6 +186,47 @@
                                                 <li>遊びの中で、集中力・認識力・思考の芽を育て、将来の創造的な学びへとつながる基礎を築きます。</li>
                                             </ul>
                                             <img src="assets/images/cource01-img.png" alt="0、1、2歳コース詳細" class="course-slide__img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 02: 創造思考コース -->
+                            <div class="swiper-slide">
+                                <div class="course-slide">
+                                    <img src="assets/images/courses-slide02-bg.png" alt="" class="course-slide__bg">
+                                    <h3 class="course-slide__title">創造思考コース</h3>
+                                    <p class="course-slide__subtitle">Creative Thinking</p>
+                                    <div class="course-slide__card">
+                                        <img src="assets/images/courses-card-bg.png" alt="" class="course-slide__card-bg">
+                                        <div class="course-slide__card-inner">
+                                            <span class="course-slide__badge course-slide__badge--blue">コース内容</span>
+                                            <ul class="course-slide__list course-slide__list--blue">
+                                                <li>「なぜ？」「本当にそう？」という問いから、自分なりの答えをつくる力を育てます。</li>
+                                                <li>知識を覚えるのではなく、比べる・分ける・つなげる・疑うといった思考を通して、物事を多面的に捉える力を養います。</li>
+                                                <li>テーマに沿った探究活動の中で、仮説を立て、試し、考え直すプロセスを繰り返し、自分の考えを言葉や形で表現する力へとつなげます。</li>
+                                                <li>「正解を出す」から「意味をつくる」へ。これからの時代に必要な創造的な思考力の土台を育みます。</li>
+                                            </ul>
+                                            <img src="assets/images/cource02-img.png" alt="創造思考コース詳細" class="course-slide__img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 03: 読解探究コース -->
+                            <div class="swiper-slide">
+                                <div class="course-slide">
+                                    <img src="assets/images/courses-slide03-bg.png" alt="" class="course-slide__bg">
+                                    <h3 class="course-slide__title">読解探究コース</h3>
+                                    <p class="course-slide__subtitle">Inquiry Reading</p>
+                                    <div class="course-slide__card">
+                                        <img src="assets/images/courses-card-bg.png" alt="" class="course-slide__card-bg">
+                                        <div class="course-slide__card-inner">
+                                            <span class="course-slide__badge course-slide__badge--green">コース内容</span>
+                                            <ul class="course-slide__list course-slide__list--green">
+                                                <li>文章を「正しく読む」だけでなく、そこから意味を考え、自分の考えを深める力を育てます。</li>
+                                                <li>登場人物の意図や筆者の考えを読み取りながら、「なぜそうなるのか」「他の見方はあるか」を問い続け、一つの答えにとどまらない理解を目指します。</li>
+                                                <li>要約・比較・批判的思考などを通じて、情報を整理し、自分の言葉で表現する力を養います。</li>
+                                            </ul>
+                                            <img src="assets/images/cource03-img.png" alt="読解探究コース詳細" class="course-slide__img">
                                         </div>
                                     </div>
                                 </div>

@@ -84,10 +84,56 @@
   display: flex;
   gap: 20px;
 }
-.hero__banner {
+.hero__banner:first-child {
   display: block;
-  height: 185px;
-  width: auto;
+  width: 542px;
+  max-width: 28.2vw;
+  height: auto;
+}
+.hero__banner:last-child {
+  display: block;
+  width: 512px;
+  max-width: 26.7vw;
+  height: auto;
+}
+.hero__banners--sp {
+  display: none;
+}
+.hero__banner-sp {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero__main-picture {
+  display: block;
+}
+
+/* =========================
+   HERO - SP
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 20px;
+  }
+  .hero__inner {
+    padding: 0;
+  }
+  .hero__main {
+    width: 100%;
+  }
+  .hero__img02,
+  .hero__img03 {
+    display: none;
+  }
+  .hero__banners--pc {
+    display: none;
+  }
+  .hero__banners--sp {
+    display: block;
+    position: relative;
+    margin-top: -10px;
+    padding: 0 4%;
+  }
 }
 
 .concept {
@@ -171,7 +217,7 @@
 .features {
   position: relative;
   overflow: hidden;
-  padding: 80px 0 100px;
+  padding: 160px 0 140px;
   margin-top: -20px;
 }
 .features__bg {
@@ -207,6 +253,7 @@
   width: 400px;
   height: 487px;
   flex-shrink: 0;
+  overflow: hidden;
 }
 .feature-card__bg {
   position: absolute;
@@ -279,7 +326,17 @@
 }
 .feature-card__photo {
   position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
   pointer-events: none;
+}
+.feature-card__photo--02 {
+  bottom: 20px;
+}
+.feature-card__photo--03 {
+  bottom: 20px;
 }
 .feature-card__photo img {
   display: block;
@@ -292,7 +349,7 @@
 ========================= */
 .courses {
   position: relative;
-  padding: 80px 0 60px;
+  padding: 80px 0 0;
 }
 .courses__inner {
   max-width: 1920px;
@@ -308,11 +365,14 @@
 .courses__slider {
   position: relative;
 }
+.courses-swiper {
+  padding-bottom: 50px;
+}
 
 /* Slide */
 .course-slide {
   position: relative;
-  padding: 20px 0 40px;
+  padding: 60px 0 140px;
 }
 .course-slide__bg {
   position: absolute;
@@ -329,6 +389,14 @@
   font-size: 40px;
   text-align: center;
   color: #000;
+  margin-bottom: 10px;
+}
+.course-slide__subtitle {
+  position: relative;
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  text-align: center;
+  color: #000;
   margin-bottom: 30px;
 }
 .course-slide__card {
@@ -336,6 +404,9 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px;
+}
+.course-slide__card--01 {
+  margin-top: 60px;
 }
 .course-slide__card-bg {
   position: absolute;
@@ -366,6 +437,12 @@
 .course-slide__badge--pink {
   background: #e8abac;
 }
+.course-slide__badge--blue {
+  background: #63c2c7;
+}
+.course-slide__badge--green {
+  background: #b3c96c;
+}
 
 /* Bullet list */
 .course-slide__list {
@@ -381,17 +458,25 @@
 .course-slide__list li {
   padding-left: 1.2em;
   text-indent: -1.2em;
+  letter-spacing: -0.02em;
 }
 .course-slide__list li::before {
   content: "■";
   color: #e79b9d;
   margin-right: 0.2em;
 }
+.course-slide__list--blue li::before {
+  color: #63c2c7;
+}
+.course-slide__list--green li::before {
+  color: #b3c96c;
+}
 
 /* Course image */
 .course-slide__img {
   display: block;
-  width: 100%;
+  width: 945px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -417,12 +502,13 @@
 
 /* Pagination */
 .courses-pagination {
-  margin-top: 20px;
+  bottom: 140px !important;
+  top: auto !important;
 }
 .courses-pagination .swiper-pagination-bullet {
   width: 16px;
   height: 16px;
-  background: #ccc;
+  background: #fff;
   opacity: 1;
 }
 .courses-pagination .swiper-pagination-bullet-active {
@@ -793,7 +879,7 @@
 .footer__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px 80px;
+  padding: 140px 20px 100px;
   color: #fff;
 }
 .footer__title {
@@ -801,12 +887,12 @@
   font-size: 40px;
   text-align: center;
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 140px;
   letter-spacing: 0.3em;
 }
 .footer__columns {
   display: flex;
-  gap: 120px;
+  gap: 200px;
   justify-content: center;
 }
 .footer__col {
@@ -853,6 +939,7 @@
 .footer__bottom {
   padding: 30px 0;
   text-align: center;
+  background: #fff;
 }
 .footer__logo {
   display: inline-block;
@@ -863,10 +950,10 @@
 .float-nav {
   position: fixed;
   top: 0;
-  right: 66px;
+  right: 3.44vw;
   z-index: 100;
   display: flex;
-  gap: 12px;
+  gap: 0.625vw;
 }
 
 .float-btn {
@@ -874,8 +961,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 198px;
-  height: 204px;
+  width: 10.3vw;
+  height: 10.6vw;
   text-decoration: none;
   transition: transform 0.3s ease;
 }
@@ -893,7 +980,7 @@
 .float-btn__text {
   position: relative;
   font-family: "Kiwi Maru", serif;
-  font-size: 36px;
+  font-size: 1.875vw;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.02em;

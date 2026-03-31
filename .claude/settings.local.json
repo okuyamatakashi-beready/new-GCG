@@ -23,7 +23,8 @@
       "mcp__figma-desktop__get_metadata",
       "Bash(ls -la /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-card*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-num*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-line*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-icon*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-pen*.png /Users/okuyamatakashishi/Sites/gcg-new/assets/images/feature-photo-mask*.svg)",
       "Bash(cd:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "mcp__figma__get_design_context"
     ]
   }
 }
