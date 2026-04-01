@@ -1,4 +1,16 @@
 /* =========================
+   UTILITY
+========================= */
+.sp-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp-only {
+    display: inline;
+  }
+}
+
+/* =========================
    FADE-IN ANIMATION
 ========================= */
 .fade-in {
@@ -9,6 +21,32 @@
 .fade-in.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* picture wrapper inherits absolute positioning from bg images */
+.bg-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.bg-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* picture inside already-positioned containers */
+.fill-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.fill-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header {
@@ -46,6 +84,9 @@
   width: 202px;
   height: auto;
 }
+.header__logo .header__logo-sp {
+  display: none;
+}
 
 .hero {
   position: relative;
@@ -76,18 +117,24 @@
   width: 79%;
   height: auto;
 }
-.hero__img02 {
+.hero__img02-picture {
   position: absolute;
   top: 26%;
   right: 0;
   width: 30.7%;
+}
+.hero__img02 {
+  width: 100%;
   height: auto;
 }
-.hero__img03 {
+.hero__img03-picture {
   position: absolute;
   bottom: 8%;
   right: 0;
   width: 14%;
+}
+.hero__img03 {
+  width: 100%;
   height: auto;
 }
 .hero__banners {
@@ -134,18 +181,25 @@
   .hero__main {
     width: 100%;
   }
-  .hero__img02,
-  .hero__img03 {
+  .hero__img02-picture,
+  .hero__img03-picture {
     display: none;
   }
   .hero__banners--pc {
     display: none;
   }
+  .hero__main-picture {
+    position: relative;
+    z-index: 2;
+  }
   .hero__banners--sp {
     display: block;
     position: relative;
-    margin-top: -10px;
-    padding: 0 4%;
+    left: 0;
+    z-index: 1;
+    margin-top: -28px;
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -153,13 +207,17 @@
   position: relative;
   overflow: hidden;
 }
-.concept__top {
+.concept__top-picture {
   position: relative;
   z-index: 2;
   display: block;
   width: 100%;
-  height: auto;
   margin-top: -1px;
+}
+.concept__top {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .concept__bg {
   position: absolute;
@@ -178,8 +236,8 @@
 .concept__inner {
   position: relative;
   max-width: 1920px;
-  margin: -80px auto 0;
-  padding: 0 20px 80px;
+  margin: -10vw auto 0;
+  padding: 0 20px 120px;
   text-align: center;
 }
 .concept__catch {
@@ -194,13 +252,13 @@
 }
 .concept__arrow {
   display: block;
-  margin: -80px auto 40px;
+  margin: -80px auto 44px;
   width: 626px;
   max-width: 100%;
   height: auto;
 }
 .concept__lead {
-  margin-bottom: 50px;
+  margin-bottom: 73px;
 }
 .concept__lead-line {
   font-family: "Kiwi Maru", serif;
@@ -212,12 +270,12 @@
   background: linear-gradient(transparent 60%, #c7db63 60%);
 }
 .concept__logo {
-  margin: 0 auto 40px;
+  margin: 0 auto 65px;
 }
 .concept__logo img {
   display: block;
   margin: 0 auto;
-  width: 332px;
+  width: 276px;
   height: auto;
 }
 .concept__desc {
@@ -377,8 +435,13 @@
 }
 .courses__slider {
   position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow-x: clip;
+  overflow-y: visible;
 }
 .courses-swiper {
+  overflow: visible !important;
   padding-bottom: 50px;
 }
 
@@ -386,6 +449,24 @@
 .course-slide {
   position: relative;
   padding: 60px 0 140px;
+}
+/* Hide <picture> bg, use CSS background-image instead */
+.course-slide > .bg-picture {
+  display: none;
+}
+.course-slide {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.course-slide--01 {
+  background-image: url('../images/webp/courses-slide01-bg.webp');
+}
+.course-slide--02 {
+  background-image: url('../images/webp/courses-slide02-bg.webp');
+}
+.course-slide--03 {
+  background-image: url('../images/webp/courses-slide03-bg.webp');
 }
 .course-slide__bg {
   position: absolute;
@@ -444,17 +525,17 @@
   font-size: 24px;
   color: #fff;
   padding: 4px 24px;
-  border-radius: 20px;
+  border-radius: 7px;
   margin-bottom: 20px;
 }
 .course-slide__badge--pink {
-  background: #e8abac;
+  background: #7381af;
 }
 .course-slide__badge--blue {
-  background: #63c2c7;
+  background: #7381af;
 }
 .course-slide__badge--green {
-  background: #b3c96c;
+  background: #7381af;
 }
 
 /* Bullet list */
@@ -507,10 +588,10 @@
   height: auto;
 }
 .courses-arrow--prev {
-  left: 20px;
+  left: calc(50% - 620px);
 }
 .courses-arrow--next {
-  right: 20px;
+  right: calc(50% - 620px);
 }
 
 /* Pagination */
@@ -532,7 +613,7 @@
    ADMISSION
 ========================= */
 .admission {
-  padding: 60px 0 80px;
+  padding: 60px 0 120px;
 }
 .admission__inner {
   max-width: 1100px;
@@ -572,7 +653,7 @@
 .admission__body-left {
   width: 35%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 40px 20px;
 }
@@ -664,17 +745,14 @@
 ========================= */
 .reviews {
   position: relative;
-  padding: 80px 0 60px;
-  overflow: hidden;
+  padding: 117px 0 82px;
+  background-image: url('../images/webp/reviews-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.reviews__bg {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110%;
-  height: auto;
-  pointer-events: none;
+.reviews__bg-picture {
+  display: none;
 }
 .reviews__inner {
   position: relative;
@@ -687,22 +765,22 @@
   font-family: "Kiwi Maru", serif;
   font-size: 48px;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 44px;
 }
 .reviews__lead {
   font-family: "Kiwi Maru", serif;
   font-size: 24px;
   color: #000;
-  margin-bottom: 50px;
+  margin-bottom: 86px;
 }
 
 /* Rating cards */
 .reviews__cards {
   display: grid;
   grid-template-columns: repeat(2, 332px);
-  gap: 24px;
+  gap: 45px 66px;
   justify-content: center;
-  margin: 0 auto 24px;
+  margin: 0 auto 44px;
 }
 .review-card {
   position: relative;
@@ -776,7 +854,7 @@
   font-family: "Kiwi Maru", serif;
   font-size: 16px;
   color: #1a1311;
-  margin-bottom: 60px;
+  margin-bottom: 82px;
 }
 
 /* Gallery */
@@ -802,7 +880,7 @@
    CTA
 ========================= */
 .cta {
-  padding: 80px 0 60px;
+  padding: 85px 0 135px;
 }
 .cta__inner {
   max-width: 1200px;
@@ -813,9 +891,9 @@
 .cta__title {
   font-family: "Kiwi Maru", serif;
   font-size: 48px;
-  line-height: 1.4;
+  line-height: 1.65;
   color: #000;
-  margin-bottom: 50px;
+  margin-bottom: 85px;
 }
 .cta__btn {
   position: relative;
@@ -825,7 +903,7 @@
   width: 558px;
   height: 203px;
   text-decoration: none;
-  margin-bottom: 60px;
+  margin-bottom: 112px;
 }
 .cta__btn-bg {
   position: absolute;
@@ -866,13 +944,13 @@
   font-family: "Kiwi Maru", serif;
   font-size: 32px;
   color: #000;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 .cta__follow {
   font-family: "Kiwi Maru", serif;
   font-size: 48px;
   color: #ea3b77;
-  margin-bottom: 24px;
+  margin-bottom: 51px;
 }
 .cta__instagram-icon {
   display: inline-block;
@@ -1003,6 +1081,7 @@
 }
 .float-btn--contact .float-btn__text {
   color: #fff;
+  font-size: 1.7vw;
 }
 
 /* =========================
@@ -1020,28 +1099,50 @@
   .header__logo img {
     width: 103px;
   }
+  .header__logo .header__logo-pc {
+    display: none;
+  }
+  .header__logo .header__logo-sp {
+    display: block;
+  }
 
   /* --- CONCEPT --- */
+  .concept {
+    margin-top: -3px;
+  }
   .concept__inner {
-    margin-top: -40px;
-    padding: 0 16px 40px;
+    margin-top: -20px;
+    padding: 60px 16px 40px;
+  }
+  .concept__catch {
+    margin-bottom: 20px;
   }
   .concept__catch-text {
     font-size: 24px;
+    line-height: 1.4;
   }
   .concept__arrow {
-    width: 80%;
-    margin: -40px auto 20px;
+    width: 325px;
+    max-width: 90%;
+    height: 68px;
+    margin: -40px auto 23px;
+  }
+  .concept__lead {
+    margin-bottom: 47px;
   }
   .concept__lead-line {
     font-size: 20px;
+    line-height: 1.6;
+  }
+  .concept__logo {
+    margin-bottom: 37px;
   }
   .concept__logo img {
-    width: 200px;
+    width: 192px;
   }
   .concept__desc {
-    font-size: 17px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 2.0;
   }
 
   /* --- FEATURES --- */
@@ -1088,8 +1189,17 @@
     margin-bottom: 20px;
     padding: 0 16px;
   }
+  .courses-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+  .courses-swiper .swiper-slide {
+    height: auto;
+  }
   .course-slide {
     padding: 40px 0 80px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   .course-slide__title {
     font-size: 29px;
@@ -1098,7 +1208,12 @@
     font-size: 17px;
   }
   .course-slide__card {
+    width: 90%;
+    margin: 0 auto;
     padding: 20px 10px;
+  }
+  .course-slide__card--01 {
+    margin-top: 40px;
   }
   .course-slide__card-inner {
     padding: 16px 20px;
@@ -1117,147 +1232,254 @@
     width: 24px;
   }
   .courses-arrow--prev {
-    left: 8px;
+    left: 2px;
   }
   .courses-arrow--next {
-    right: 8px;
+    right: 2px;
   }
   .courses-pagination {
-    bottom: 60px !important;
+    bottom: 90px !important;
   }
 
   /* --- ADMISSION --- */
   .admission {
-    padding: 40px 0 60px;
+    padding: 40px 0 40px;
   }
   .admission__inner {
-    padding: 0 16px;
+    padding: 0 37px;
+  }
+  .admission__table {
+    display: flex;
+    flex-direction: column;
   }
   .admission__header {
-    flex-direction: column;
-    gap: 12px;
+    display: contents;
   }
-  .admission__header-cell:first-child,
+  .admission__header-cell {
+    padding-bottom: 14px;
+  }
+  .admission__header-cell:first-child {
+    width: 100%;
+    order: 1;
+  }
   .admission__header-cell:last-child {
     width: 100%;
+    order: 3;
+    padding-top: 46px;
+    padding-bottom: 18px;
   }
   .admission__body {
-    flex-direction: column;
+    display: contents;
   }
   .admission__body-left {
     width: 100%;
-    padding: 20px;
+    padding: 0;
+    text-align: center;
+    order: 2;
   }
   .admission__body-right {
     width: 100%;
-    padding: 20px 0;
+    padding: 0;
+    order: 4;
   }
   .admission__badge {
-    font-size: 20px;
+    font-size: 16px;
+    padding: 3px 20px;
+    border-radius: 14px;
   }
   .admission__price {
-    font-size: 27px;
+    font-size: 22px;
+  }
+  .admission__yen {
+    font-size: 16px;
+    margin-left: 2px;
+  }
+  .admission__tax {
+    font-size: 10px;
+  }
+  .admission__per {
+    font-size: 16px;
   }
   .admission__row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 12px 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    border-bottom: none;
+  }
+  .admission__course {
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    padding: 4px 10px;
+  }
+  .admission__course-bg {
+    border-radius: 8px;
   }
   .admission__price-wrap {
-    margin-left: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: baseline;
   }
   .admission__notes {
     font-size: 12px;
+    line-height: 18px;
+    margin-top: 27px;
   }
 
   /* --- REVIEWS --- */
   .reviews {
-    padding: 60px 0 40px;
+    padding: 60px 0 80px;
+  }
+  .reviews__inner {
+    padding: 0 19px;
   }
   .reviews__title {
-    font-size: 29px;
-    margin-bottom: 16px;
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 24px;
   }
   .reviews__lead {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.5;
     margin-bottom: 30px;
   }
   .reviews__cards {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 25px;
+    justify-items: center;
   }
   .review-card {
-    width: 100%;
-    height: auto;
-    padding: 20px;
+    width: 332px;
+    max-width: 100%;
+    height: 247px;
+    padding: 20px 30px 24px;
   }
   .review-card__label {
-    font-size: 20px;
+    font-size: 24px;
+  }
+  .review-card__label-border {
+    width: 281px;
+    max-width: 100%;
+  }
+  .review-card__stars {
+    height: 35px;
   }
   .review-card__score strong {
-    font-size: 60px;
+    font-size: 90px;
+    line-height: 1.2;
   }
   .review-card__score span {
-    font-size: 22px;
+    font-size: 30px;
+  }
+  .reviews__note {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .reviews__gallery {
+    margin-top: 40px;
   }
   .reviews__gallery-row {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
   .reviews__photo {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
   }
 
   /* --- CTA --- */
   .cta {
-    padding: 60px 0 40px;
+    padding: 50px 0 40px;
   }
   .cta__title {
-    font-size: 29px;
-    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 24px;
   }
   .cta__btn {
     width: 100%;
     max-width: 340px;
     height: auto;
     aspect-ratio: 558 / 203;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   .cta__btn-heading {
     font-size: 24px;
   }
   .cta__btn-link {
     font-size: 16px;
+    padding: 6px 18px;
   }
   .cta__instagram-label {
-    font-size: 24px;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   .cta__follow {
-    font-size: 33px;
+    font-size: 27px;
+    margin-bottom: 16px;
+  }
+  .cta__instagram-icon img {
+    width: 52px;
+    height: 52px;
   }
 
   /* --- FOOTER --- */
   .footer__inner {
-    padding: 60px 16px 60px;
+    padding: 64px 28px 57px;
   }
   .footer__title {
-    font-size: 29px;
-    margin-bottom: 60px;
+    font-size: 32px;
+    letter-spacing: 0.3em;
+    margin-bottom: 55px;
   }
   .footer__columns {
     flex-direction: column;
-    gap: 40px;
+    gap: 0;
+    text-align: left;
+  }
+  .footer__col {
+    width: 100%;
+  }
+  .footer__col:first-child {
+    margin-bottom: 70px;
   }
   .footer__heading {
-    font-size: 20px;
+    font-size: 16px;
+    margin-bottom: 16px;
+    text-align: center;
   }
   .footer__name {
-    font-size: 24px;
+    font-size: 28px;
+    margin-bottom: 33px;
+    text-align: center;
   }
   .footer__text {
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .footer__col:last-child .footer__name {
+    font-size: 24px;
+    margin-bottom: 39px;
+  }
+  .footer__phone {
+    width: 263px;
+    margin: 0 auto 6px;
+  }
+  .footer__text--small {
+    width: 270px;
+    margin: 0 auto 43px;
+  }
+  .footer__text--small {
+    font-size: 12px;
+    margin-bottom: 43px;
+  }
+  .footer__privacy {
+    font-size: 13px;
+    margin-top: 29px;
   }
 
   /* --- FLOAT NAV --- */
@@ -1270,6 +1492,9 @@
     height: 74px;
   }
   .float-btn__text {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  .float-btn--contact .float-btn__text {
+    font-size: 12px;
   }
 }
