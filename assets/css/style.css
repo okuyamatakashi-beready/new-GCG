@@ -112,6 +112,16 @@
   max-width: 1920px;
   margin: 0 auto;
 }
+.hero__catchcopy {
+  position: absolute;
+  top: 3%;
+  left: 29%;
+  font-family: "Kiwi Maru", serif;
+  font-size: 1.25vw;
+  color: #000;
+  z-index: 3;
+  white-space: nowrap;
+}
 .hero__main {
   display: block;
   width: 79%;
@@ -156,6 +166,13 @@
   max-width: 26.7vw;
   height: auto;
 }
+.hero__banners--pc a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+.hero__banners--pc a:hover {
+  transform: translateY(4px);
+}
 .hero__banners--sp {
   display: none;
 }
@@ -177,6 +194,11 @@
   }
   .hero__inner {
     padding: 0;
+  }
+  .hero__catchcopy {
+    top: -1%;
+    left: 6%;
+    font-size: 3.2vw;
   }
   .hero__main {
     width: 100%;
@@ -1243,7 +1265,7 @@
 
   /* --- ADMISSION --- */
   .admission {
-    padding: 40px 0 40px;
+    padding: 16px 0 40px;
   }
   .admission__inner {
     padding: 0 37px;
@@ -1379,6 +1401,7 @@
   }
   .reviews__gallery {
     margin-top: 40px;
+    gap: 10px;
   }
   .reviews__gallery-row {
     flex-direction: column;

@@ -1,0 +1,389 @@
+// =========================
+// HEADER
+// =========================
+.header {
+  position: relative;
+  height: 116px;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 66px;
+  }
+
+  &__logo {
+    margin: 0;
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: 202px;
+      height: auto;
+    }
+  }
+
+}
+
+// =========================
+// HERO
+// =========================
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 40px;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  &__main {
+    display: block;
+    width: 79%;
+    height: auto;
+  }
+
+  &__img02 {
+    position: absolute;
+    top: 26%;
+    right: 0;
+    width: 30.7%;
+    height: auto;
+  }
+
+  &__img03 {
+    position: absolute;
+    bottom: 8%;
+    right: 0;
+    width: 14%;
+    height: auto;
+  }
+
+  &__banners {
+    position: absolute;
+    bottom: 5%;
+    left: 21.4%;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__banner {
+    display: block;
+    height: 185px;
+    width: auto;
+  }
+}
+
+// =========================
+// CONCEPT
+// =========================
+.concept {
+  position: relative;
+  overflow: hidden;
+
+  &__top {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: -1px;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 1920px;
+    margin: -80px auto 0;
+    padding: 0 20px 80px;
+    text-align: center;
+  }
+
+  &__catch {
+    margin-bottom: 30px;
+
+    &-text {
+      display: inline-block;
+      font-family: 'Kiwi Maru', serif;
+      font-size: 40px;
+      line-height: 1.5;
+      color: #009f89;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    margin: -80px auto 40px;
+    width: 626px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__lead {
+    margin-bottom: 50px;
+
+    &-line {
+      font-family: 'Kiwi Maru', serif;
+      font-size: 32px;
+      line-height: 1.5;
+      color: #000;
+    }
+
+    &-highlight {
+      background: linear-gradient(transparent 60%, #c7db63 60%);
+    }
+  }
+
+  &__logo {
+    margin: 0 auto 40px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 332px;
+      height: auto;
+    }
+  }
+
+  &__desc {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 24px;
+    line-height: 2;
+    color: #231815;
+  }
+}
+
+// =========================
+// FEATURES
+// =========================
+.features {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 100px;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 66px;
+  }
+
+  &__title {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 48px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 60px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+.feature-card {
+  position: relative;
+  width: 385px;
+  height: 487px;
+  flex-shrink: 0;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    padding: 30px 25px;
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  &__num {
+    width: 45px;
+    height: auto;
+  }
+
+  &__num-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Kiwi Maru', serif;
+    font-size: 24px;
+    color: #fff;
+    // Position over the num badge
+    left: calc(50% - 130px);
+  }
+
+  &__name {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 28px;
+    color: #1a1311;
+  }
+
+  &__line {
+    display: block;
+    width: 311px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+
+  &__text {
+    font-family: 'Kiwi Maru', serif;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  &__accent {
+    font-size: 24px;
+    color: #298932;
+  }
+
+  &__small {
+    font-size: 20px;
+    color: #1a1311;
+  }
+
+  &__photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// =========================
+// FLOAT BUTTONS
+// =========================
+.float-nav {
+  position: fixed;
+  top: 0;
+  right: 66px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+}
+
+.float-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 198px;
+  height: 204px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__text {
+    position: relative;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  &--trial &__text {
+    color: #1a1311;
+  }
+
+  &--contact &__text {
+    color: #fff;
+  }
+}

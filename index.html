@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="お子様の可能性を広げる第一歩は、ここから - GCG">
-    <title>GCG - 生徒募集中</title>
+    <meta name="description" content="Gakken Creative Gateway(GCG) は、小学校受験で問われるレベルの思考力を育みながら、受験のために型にはめるのではなく、子ども自身の興味や違和感を出発点に、多様な視点と出会い、思考と創造を深めていく学びの場です。">
+    <title>Gakken Creative Gateway</title>
+    <link rel="icon" href="assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1250533176760367');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1250533176760367&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -44,6 +62,7 @@
                 </picture>
             </div>
             <div class="hero__inner">
+                <p class="hero__catchcopy">思考力と創造力を育てる</p>
                 <picture class="hero__main-picture">
                     <source srcset="assets/images/webp/mv-inner-sp.webp" media="(max-width: 768px)" type="image/webp">
                     <source srcset="assets/images/mv-inner-sp.png" media="(max-width: 768px)">
@@ -59,7 +78,7 @@
                     <img src="assets/images/mv-img03.png" alt="" class="hero__img03">
                 </picture>
                 <div class="hero__banners hero__banners--pc">
-                    <img src="assets/images/mv-banner01-pc.png" alt="今なら入会金0円（4月入会の方対象）" class="hero__banner">
+                    <a href="https://docs.google.com/forms/d/1zQ20eN5hXON2bSplbb6Kn9RFY_8TWEClH8Uod7u1MBc/edit" target="_blank" rel="noopener noreferrer"><img src="assets/images/mv-banner01-pc.png" alt="今なら入会金0円（4月入会の方対象）" class="hero__banner"></a>
                     <a href="https://docs.google.com/forms/d/1zQ20eN5hXON2bSplbb6Kn9RFY_8TWEClH8Uod7u1MBc/edit" target="_blank" rel="noopener noreferrer"><img src="assets/images/mv-banner02-pc.png" alt="体験会受付中" class="hero__banner"></a>
                 </div>
                 <div class="hero__banners hero__banners--sp">
@@ -522,6 +541,38 @@
 
     document.querySelectorAll('.fade-in').forEach(function(el) {
       fadeObserver.observe(el);
+    });
+
+    // Count-up animation for review scores
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseFloat(el.textContent);
+          var decimals = (el.textContent.split('.')[1] || '').length;
+          var duration = 1500;
+          var startTime = null;
+          el.textContent = (0).toFixed(decimals);
+
+          function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = (target * eased).toFixed(decimals);
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              el.textContent = target.toFixed(decimals);
+            }
+          }
+          requestAnimationFrame(animate);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.review-card__score strong').forEach(function(el) {
+      countObserver.observe(el);
     });
     </script>
 </body>

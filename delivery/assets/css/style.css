@@ -1,0 +1,1523 @@
+/* =========================
+   UTILITY
+========================= */
+.sp-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp-only {
+    display: inline;
+  }
+}
+
+/* =========================
+   FADE-IN ANIMATION
+========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* picture wrapper inherits absolute positioning from bg images */
+.bg-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.bg-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* picture inside already-positioned containers */
+.fill-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.fill-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  position: relative;
+  height: 116px;
+  overflow: hidden;
+}
+.header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 66px;
+}
+.header__logo {
+  margin: 0;
+}
+.header__logo a {
+  display: block;
+}
+.header__logo img {
+  display: block;
+  width: 202px;
+  height: auto;
+}
+.header__logo .header__logo-sp {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 40px;
+}
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__inner {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.hero__catchcopy {
+  position: absolute;
+  top: 3%;
+  left: 29%;
+  font-family: "Kiwi Maru", serif;
+  font-size: 1.25vw;
+  color: #000;
+  z-index: 3;
+  white-space: nowrap;
+}
+.hero__main {
+  display: block;
+  width: 79%;
+  height: auto;
+}
+.hero__img02-picture {
+  position: absolute;
+  top: 26%;
+  right: 0;
+  width: 30.7%;
+}
+.hero__img02 {
+  width: 100%;
+  height: auto;
+}
+.hero__img03-picture {
+  position: absolute;
+  bottom: 8%;
+  right: 0;
+  width: 14%;
+}
+.hero__img03 {
+  width: 100%;
+  height: auto;
+}
+.hero__banners {
+  position: absolute;
+  bottom: 5%;
+  left: 21.4%;
+  display: flex;
+  gap: 20px;
+}
+.hero__banner:first-child {
+  display: block;
+  width: 542px;
+  max-width: 28.2vw;
+  height: auto;
+}
+.hero__banner:last-child {
+  display: block;
+  width: 512px;
+  max-width: 26.7vw;
+  height: auto;
+}
+.hero__banners--pc a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+.hero__banners--pc a:hover {
+  transform: translateY(4px);
+}
+.hero__banners--sp {
+  display: none;
+}
+.hero__banner-sp {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero__main-picture {
+  display: block;
+}
+
+/* =========================
+   HERO - SP
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 20px;
+  }
+  .hero__inner {
+    padding: 0;
+  }
+  .hero__catchcopy {
+    top: -1%;
+    left: 6%;
+    font-size: 3.2vw;
+  }
+  .hero__main {
+    width: 100%;
+  }
+  .hero__img02-picture,
+  .hero__img03-picture {
+    display: none;
+  }
+  .hero__banners--pc {
+    display: none;
+  }
+  .hero__main-picture {
+    position: relative;
+    z-index: 2;
+  }
+  .hero__banners--sp {
+    display: block;
+    position: relative;
+    left: 0;
+    z-index: 1;
+    margin-top: -28px;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.concept {
+  position: relative;
+  overflow: hidden;
+}
+.concept__top-picture {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  margin-top: -1px;
+}
+.concept__top {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.concept__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.concept__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.concept__inner {
+  position: relative;
+  max-width: 1920px;
+  margin: -10vw auto 0;
+  padding: 0 20px 120px;
+  text-align: center;
+}
+.concept__catch {
+  margin-bottom: 30px;
+}
+.concept__catch-text {
+  display: inline-block;
+  font-family: "Kiwi Maru", serif;
+  font-size: 40px;
+  line-height: 1.5;
+  color: #009f89;
+}
+.concept__arrow {
+  display: block;
+  margin: -80px auto 44px;
+  width: 626px;
+  max-width: 100%;
+  height: auto;
+}
+.concept__lead {
+  margin-bottom: 73px;
+}
+.concept__lead-line {
+  font-family: "Kiwi Maru", serif;
+  font-size: 32px;
+  line-height: 1.5;
+  color: #000;
+}
+.concept__lead-highlight {
+  background: linear-gradient(transparent 60%, #c7db63 60%);
+}
+.concept__logo {
+  margin: 0 auto 65px;
+}
+.concept__logo img {
+  display: block;
+  margin: 0 auto;
+  width: 276px;
+  height: auto;
+}
+.concept__desc {
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  line-height: 2;
+  color: #231815;
+}
+
+.features {
+  position: relative;
+  overflow: hidden;
+  padding: 160px 0 140px;
+  margin-top: -20px;
+}
+.features__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.features__inner {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 66px;
+}
+.features__title {
+  font-family: "Kiwi Maru", serif;
+  font-size: 48px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 60px;
+}
+.features__cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-card {
+  position: relative;
+  width: 400px;
+  height: 487px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.feature-card__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.feature-card__content {
+  position: relative;
+  padding: 30px 0;
+  text-align: center;
+}
+.feature-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.feature-card__num-wrap {
+  position: relative;
+  width: 45px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.feature-card__num {
+  width: 100%;
+  height: 100%;
+}
+.feature-card__num-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+}
+.feature-card__name {
+  font-family: "Kiwi Maru", serif;
+  font-size: 28px;
+  color: #1a1311;
+}
+.feature-card__line {
+  display: block;
+  width: 311px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 30px;
+}
+.feature-card__text {
+  font-family: "Kiwi Maru", serif;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.feature-card__text p {
+  white-space: nowrap;
+}
+.feature-card__accent {
+  font-size: 24px;
+  color: #298932;
+}
+.feature-card__small {
+  font-size: 20px;
+  color: #1a1311;
+}
+.feature-card__photo {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  pointer-events: none;
+}
+.feature-card__photo--02 {
+  bottom: 20px;
+}
+.feature-card__photo--03 {
+  bottom: 20px;
+}
+.feature-card__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================
+   COURSES
+========================= */
+.courses {
+  position: relative;
+  padding: 80px 0 0;
+}
+.courses__inner {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.courses__title {
+  font-family: "Kiwi Maru", serif;
+  font-size: 48px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 40px;
+}
+.courses__slider {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.courses-swiper {
+  overflow: visible !important;
+  padding-bottom: 50px;
+}
+
+/* Slide */
+.course-slide {
+  position: relative;
+  padding: 60px 0 140px;
+}
+/* Hide <picture> bg, use CSS background-image instead */
+.course-slide > .bg-picture {
+  display: none;
+}
+.course-slide {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.course-slide--01 {
+  background-image: url('../images/webp/courses-slide01-bg.webp');
+}
+.course-slide--02 {
+  background-image: url('../images/webp/courses-slide02-bg.webp');
+}
+.course-slide--03 {
+  background-image: url('../images/webp/courses-slide03-bg.webp');
+}
+.course-slide__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.course-slide__title {
+  position: relative;
+  font-family: "Kiwi Maru", serif;
+  font-size: 40px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 10px;
+}
+.course-slide__subtitle {
+  position: relative;
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+}
+.course-slide__card {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+}
+.course-slide__card--01 {
+  margin-top: 60px;
+}
+.course-slide__card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.course-slide__card-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+/* Badge */
+.course-slide__badge {
+  display: inline-block;
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  color: #fff;
+  padding: 4px 24px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+.course-slide__badge--pink {
+  background: #7381af;
+}
+.course-slide__badge--blue {
+  background: #7381af;
+}
+.course-slide__badge--green {
+  background: #7381af;
+}
+
+/* Bullet list */
+.course-slide__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  width: 100%;
+  font-family: "Kiwi Maru", serif;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #000;
+}
+.course-slide__list li {
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+  letter-spacing: -0.02em;
+}
+.course-slide__list li::before {
+  content: "■";
+  color: #e79b9d;
+  margin-right: 0.2em;
+}
+.course-slide__list--blue li::before {
+  color: #63c2c7;
+}
+.course-slide__list--green li::before {
+  color: #b3c96c;
+}
+
+/* Course image */
+.course-slide__img {
+  display: block;
+  width: 945px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Arrows */
+.courses-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+.courses-arrow img {
+  display: block;
+  width: 36px;
+  height: auto;
+}
+.courses-arrow--prev {
+  left: calc(50% - 620px);
+}
+.courses-arrow--next {
+  right: calc(50% - 620px);
+}
+
+/* Pagination */
+.courses-pagination {
+  bottom: 140px !important;
+  top: auto !important;
+}
+.courses-pagination .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  opacity: 1;
+}
+.courses-pagination .swiper-pagination-bullet-active {
+  background: #e8abac;
+}
+
+/* =========================
+   ADMISSION
+========================= */
+.admission {
+  padding: 60px 0 120px;
+}
+.admission__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header row with badges */
+.admission__header {
+  display: flex;
+}
+.admission__header-cell {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+.admission__header-cell:first-child {
+  width: 35%;
+}
+.admission__header-cell:last-child {
+  width: 65%;
+}
+.admission__badge {
+  display: inline-block;
+  font-family: "Kiwi Maru", serif;
+  font-size: 26px;
+  color: #231815;
+  background: #ffe690;
+  border-radius: 20px;
+  padding: 4px 24px;
+}
+
+/* Body: left + right separated by border */
+.admission__body {
+  display: flex;
+}
+.admission__body-left {
+  width: 35%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.admission__body-right {
+  width: 65%;
+  padding: 20px 0 20px 40px;
+}
+
+/* Price display */
+.admission__price-block {
+  display: flex;
+  align-items: baseline;
+}
+.admission__price {
+  font-family: "Kiwi Maru", serif;
+  font-size: 36px;
+  color: #000;
+}
+.admission__yen {
+  font-family: "Kiwi Maru", serif;
+  font-size: 26px;
+  color: #000;
+  margin-left: 4px;
+}
+.admission__tax {
+  font-family: "Kiwi Maru", serif;
+  font-size: 16px;
+  color: #000;
+}
+.admission__per {
+  font-family: "Kiwi Maru", serif;
+  font-size: 26px;
+  color: #000;
+}
+
+/* Course rows */
+.admission__row {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+}
+.admission__row:last-child {
+}
+.admission__course {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kiwi Maru", serif;
+  font-size: 23px;
+  color: #000;
+  width: 180px;
+  height: 47px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.admission__course-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.admission__course-text {
+  position: relative;
+  z-index: 1;
+}
+.admission__price-wrap {
+  display: flex;
+  align-items: baseline;
+  margin-left: 24px;
+}
+
+/* Notes */
+.admission__notes {
+  font-family: "Kiwi Maru", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #000;
+  margin-top: 40px;
+}
+.admission__notes p {
+  margin-bottom: 0;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews {
+  position: relative;
+  padding: 117px 0 82px;
+  background-image: url('../images/webp/reviews-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.reviews__bg-picture {
+  display: none;
+}
+.reviews__inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.reviews__title {
+  font-family: "Kiwi Maru", serif;
+  font-size: 48px;
+  color: #000;
+  margin-bottom: 44px;
+}
+.reviews__lead {
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 86px;
+}
+
+/* Rating cards */
+.reviews__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 332px);
+  gap: 45px 66px;
+  justify-content: center;
+  margin: 0 auto 44px;
+}
+.review-card {
+  position: relative;
+  width: 332px;
+  height: 247px;
+  padding: 20px 30px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.review-card__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.review-card__label {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  color: #1a1311;
+  margin-bottom: 16px;
+}
+.review-card__label-border {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 281px;
+  height: auto;
+  margin: 0 auto 18px;
+}
+.review-card__stars {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 35px;
+  width: auto;
+  margin: 0 auto 2px;
+}
+.review-card__score {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+.review-card__score strong {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  color: #dd2c5f;
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+.review-card__score span {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #dd2c5f;
+  letter-spacing: 2px;
+}
+
+.reviews__note {
+  font-family: "Kiwi Maru", serif;
+  font-size: 16px;
+  color: #1a1311;
+  margin-bottom: 82px;
+}
+
+/* Gallery */
+.reviews__gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.reviews__gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.reviews__photo {
+  display: block;
+  width: 340px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* =========================
+   CTA
+========================= */
+.cta {
+  padding: 85px 0 135px;
+}
+.cta__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.cta__title {
+  font-family: "Kiwi Maru", serif;
+  font-size: 48px;
+  line-height: 1.65;
+  color: #000;
+  margin-bottom: 85px;
+}
+.cta__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 558px;
+  height: 203px;
+  text-decoration: none;
+  margin-bottom: 112px;
+}
+.cta__btn-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.cta__btn-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.cta__btn-heading {
+  font-family: "Kiwi Maru", serif;
+  font-size: 41px;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.cta__btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Kiwi Maru", serif;
+  font-size: 28px;
+  color: #009f89;
+  background: #ffe100;
+  border-radius: 25px;
+  padding: 8px 24px;
+}
+.cta__btn-arrow {
+  width: 14px;
+  height: auto;
+}
+.cta__instagram-label {
+  font-family: "Kiwi Maru", serif;
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 30px;
+}
+.cta__follow {
+  font-family: "Kiwi Maru", serif;
+  font-size: 48px;
+  color: #ea3b77;
+  margin-bottom: 51px;
+}
+.cta__instagram-icon {
+  display: inline-block;
+}
+.cta__instagram-icon img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #727171;
+}
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 20px 100px;
+  color: #fff;
+}
+.footer__title {
+  font-family: "Kiwi Maru", serif;
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 140px;
+  letter-spacing: 0.3em;
+}
+.footer__columns {
+  display: flex;
+  gap: 200px;
+  justify-content: center;
+}
+.footer__col {
+  min-width: 0;
+}
+.footer__heading {
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.footer__name {
+  font-family: "Kiwi Maru", serif;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.footer__phone {
+  margin-bottom: 6px;
+}
+.footer__phone img {
+  display: block;
+  height: 27px;
+  width: auto;
+}
+.footer__text {
+  font-family: "Kiwi Maru", serif;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.6;
+}
+.footer__text--small {
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.footer__privacy {
+  display: block;
+  font-family: "Kiwi Maru", serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 24px;
+}
+.footer__bottom {
+  padding: 30px 0;
+  text-align: center;
+  background: #fff;
+}
+.footer__logo {
+  display: inline-block;
+  width: 201px;
+  height: auto;
+}
+
+.float-nav {
+  position: fixed;
+  top: 0;
+  right: 3.44vw;
+  z-index: 100;
+  display: flex;
+  gap: 0.625vw;
+}
+
+.float-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10.3vw;
+  height: 10.6vw;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.float-btn:hover {
+  transform: scale(1.05);
+}
+.float-btn__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.float-btn__text {
+  position: relative;
+  font-family: "Kiwi Maru", serif;
+  font-size: 1.875vw;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+.float-btn--trial .float-btn__text {
+  color: #1a1311;
+}
+.float-btn--contact .float-btn__text {
+  color: #fff;
+  font-size: 1.7vw;
+}
+
+/* =========================
+   SP RESPONSIVE (max-width: 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* --- HEADER --- */
+  .header {
+    height: 60px;
+  }
+  .header__inner {
+    padding: 0 16px;
+  }
+  .header__logo img {
+    width: 103px;
+  }
+  .header__logo .header__logo-pc {
+    display: none;
+  }
+  .header__logo .header__logo-sp {
+    display: block;
+  }
+
+  /* --- CONCEPT --- */
+  .concept {
+    margin-top: -3px;
+  }
+  .concept__inner {
+    margin-top: -20px;
+    padding: 60px 16px 40px;
+  }
+  .concept__catch {
+    margin-bottom: 20px;
+  }
+  .concept__catch-text {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  .concept__arrow {
+    width: 325px;
+    max-width: 90%;
+    height: 68px;
+    margin: -40px auto 23px;
+  }
+  .concept__lead {
+    margin-bottom: 47px;
+  }
+  .concept__lead-line {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .concept__logo {
+    margin-bottom: 37px;
+  }
+  .concept__logo img {
+    width: 192px;
+  }
+  .concept__desc {
+    font-size: 16px;
+    line-height: 2.0;
+  }
+
+  /* --- FEATURES --- */
+  .features {
+    padding: 80px 0 80px;
+  }
+  .features__inner {
+    padding: 0 16px;
+  }
+  .features__title {
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+  .features__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .feature-card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    min-height: 420px;
+  }
+  .feature-card__name {
+    font-size: 24px;
+  }
+  .feature-card__accent {
+    font-size: 20px;
+  }
+  .feature-card__small {
+    font-size: 16px;
+  }
+  .feature-card__text p {
+    white-space: normal;
+  }
+
+  /* --- COURSES --- */
+  .courses {
+    padding: 40px 0 0;
+  }
+  .courses__title {
+    font-size: 29px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+  .courses-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+  .courses-swiper .swiper-slide {
+    height: auto;
+  }
+  .course-slide {
+    padding: 40px 0 80px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .course-slide__title {
+    font-size: 29px;
+  }
+  .course-slide__subtitle {
+    font-size: 17px;
+  }
+  .course-slide__card {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  .course-slide__card--01 {
+    margin-top: 40px;
+  }
+  .course-slide__card-inner {
+    padding: 16px 20px;
+  }
+  .course-slide__badge {
+    font-size: 15px;
+  }
+  .course-slide__list {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .course-slide__img {
+    width: 100%;
+  }
+  .courses-arrow img {
+    width: 24px;
+  }
+  .courses-arrow--prev {
+    left: 2px;
+  }
+  .courses-arrow--next {
+    right: 2px;
+  }
+  .courses-pagination {
+    bottom: 90px !important;
+  }
+
+  /* --- ADMISSION --- */
+  .admission {
+    padding: 16px 0 40px;
+  }
+  .admission__inner {
+    padding: 0 37px;
+  }
+  .admission__table {
+    display: flex;
+    flex-direction: column;
+  }
+  .admission__header {
+    display: contents;
+  }
+  .admission__header-cell {
+    padding-bottom: 14px;
+  }
+  .admission__header-cell:first-child {
+    width: 100%;
+    order: 1;
+  }
+  .admission__header-cell:last-child {
+    width: 100%;
+    order: 3;
+    padding-top: 46px;
+    padding-bottom: 18px;
+  }
+  .admission__body {
+    display: contents;
+  }
+  .admission__body-left {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    order: 2;
+  }
+  .admission__body-right {
+    width: 100%;
+    padding: 0;
+    order: 4;
+  }
+  .admission__badge {
+    font-size: 16px;
+    padding: 3px 20px;
+    border-radius: 14px;
+  }
+  .admission__price {
+    font-size: 22px;
+  }
+  .admission__yen {
+    font-size: 16px;
+    margin-left: 2px;
+  }
+  .admission__tax {
+    font-size: 10px;
+  }
+  .admission__per {
+    font-size: 16px;
+  }
+  .admission__row {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
+    border-bottom: none;
+  }
+  .admission__course {
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    padding: 4px 10px;
+  }
+  .admission__course-bg {
+    border-radius: 8px;
+  }
+  .admission__price-wrap {
+    margin-left: auto;
+    display: flex;
+    align-items: baseline;
+  }
+  .admission__notes {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 27px;
+  }
+
+  /* --- REVIEWS --- */
+  .reviews {
+    padding: 60px 0 80px;
+  }
+  .reviews__inner {
+    padding: 0 19px;
+  }
+  .reviews__title {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  .reviews__lead {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  .reviews__cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    justify-items: center;
+  }
+  .review-card {
+    width: 332px;
+    max-width: 100%;
+    height: 247px;
+    padding: 20px 30px 24px;
+  }
+  .review-card__label {
+    font-size: 24px;
+  }
+  .review-card__label-border {
+    width: 281px;
+    max-width: 100%;
+  }
+  .review-card__stars {
+    height: 35px;
+  }
+  .review-card__score strong {
+    font-size: 90px;
+    line-height: 1.2;
+  }
+  .review-card__score span {
+    font-size: 30px;
+  }
+  .reviews__note {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .reviews__gallery {
+    margin-top: 40px;
+    gap: 10px;
+  }
+  .reviews__gallery-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .reviews__photo {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  /* --- CTA --- */
+  .cta {
+    padding: 50px 0 40px;
+  }
+  .cta__title {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .cta__btn {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 558 / 203;
+    margin-bottom: 30px;
+  }
+  .cta__btn-heading {
+    font-size: 24px;
+  }
+  .cta__btn-link {
+    font-size: 16px;
+    padding: 6px 18px;
+  }
+  .cta__instagram-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .cta__follow {
+    font-size: 27px;
+    margin-bottom: 16px;
+  }
+  .cta__instagram-icon img {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* --- FOOTER --- */
+  .footer__inner {
+    padding: 64px 28px 57px;
+  }
+  .footer__title {
+    font-size: 32px;
+    letter-spacing: 0.3em;
+    margin-bottom: 55px;
+  }
+  .footer__columns {
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+  }
+  .footer__col {
+    width: 100%;
+  }
+  .footer__col:first-child {
+    margin-bottom: 70px;
+  }
+  .footer__heading {
+    font-size: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .footer__name {
+    font-size: 28px;
+    margin-bottom: 33px;
+    text-align: center;
+  }
+  .footer__text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .footer__col:last-child .footer__name {
+    font-size: 24px;
+    margin-bottom: 39px;
+  }
+  .footer__phone {
+    width: 263px;
+    margin: 0 auto 6px;
+  }
+  .footer__text--small {
+    width: 270px;
+    margin: 0 auto 43px;
+  }
+  .footer__text--small {
+    font-size: 12px;
+    margin-bottom: 43px;
+  }
+  .footer__privacy {
+    font-size: 13px;
+    margin-top: 29px;
+  }
+
+  /* --- FLOAT NAV --- */
+  .float-nav {
+    right: 8px;
+    gap: 4px;
+  }
+  .float-btn {
+    width: 72px;
+    height: 74px;
+  }
+  .float-btn__text {
+    font-size: 12px;
+  }
+  .float-btn--contact .float-btn__text {
+    font-size: 12px;
+  }
+}
