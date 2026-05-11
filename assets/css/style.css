@@ -319,7 +319,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   pointer-events: none;
 }
 .features__inner {
@@ -449,7 +449,8 @@
   margin: 0 auto;
 }
 .courses__title {
-  font-family: "Kiwi Maru", serif;
+  font-family: 'Kiwi Maru', serif;
+  font-weight: normal;
   font-size: 48px;
   text-align: center;
   color: #000;
@@ -466,29 +467,36 @@
   overflow: visible !important;
   padding-bottom: 50px;
 }
+.courses-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.courses-swiper .swiper-slide {
+  height: auto;
+}
 
 /* Slide */
 .course-slide {
   position: relative;
   padding: 60px 0 140px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 /* Hide <picture> bg, use CSS background-image instead */
 .course-slide > .bg-picture {
   display: none;
 }
-.course-slide {
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-}
 .course-slide--01 {
-  background-image: url('../images/webp/courses-slide01-bg.webp');
+  background-image: url('../images/webp/courses-slide01-bg.webp'), url('../images/courses-slide01-bg.png');
 }
 .course-slide--02 {
-  background-image: url('../images/webp/courses-slide02-bg.webp');
+  background-image: url('../images/webp/courses-slide02-bg.webp'), url('../images/courses-slide02-bg.png');
 }
 .course-slide--03 {
-  background-image: url('../images/webp/courses-slide03-bg.webp');
+  background-image: url('../images/webp/courses-slide03-bg.webp'), url('../images/courses-slide03-bg.png');
 }
 .course-slide__bg {
   position: absolute;
@@ -501,7 +509,8 @@
 }
 .course-slide__title {
   position: relative;
-  font-family: "Kiwi Maru", serif;
+  font-family: 'Kiwi Maru', serif;
+  font-weight: normal;
   font-size: 40px;
   text-align: center;
   color: #000;
@@ -509,7 +518,7 @@
 }
 .course-slide__subtitle {
   position: relative;
-  font-family: "Kiwi Maru", serif;
+  font-family: 'Kiwi Maru', serif;
   font-size: 24px;
   text-align: center;
   color: #000;
@@ -520,6 +529,9 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .course-slide__card--01 {
   margin-top: 60px;
@@ -543,20 +555,12 @@
 /* Badge */
 .course-slide__badge {
   display: inline-block;
-  font-family: "Kiwi Maru", serif;
+  font-family: 'Kiwi Maru', serif;
   font-size: 24px;
   color: #fff;
   padding: 4px 24px;
   border-radius: 7px;
   margin-bottom: 20px;
-}
-.course-slide__badge--pink {
-  background: #7381af;
-}
-.course-slide__badge--blue {
-  background: #7381af;
-}
-.course-slide__badge--green {
   background: #7381af;
 }
 
@@ -566,7 +570,7 @@
   padding: 0;
   margin: 0 0 30px;
   width: 100%;
-  font-family: "Kiwi Maru", serif;
+  font-family: 'Kiwi Maru', serif;
   font-size: 20px;
   line-height: 1.8;
   color: #000;
@@ -577,7 +581,7 @@
   letter-spacing: -0.02em;
 }
 .course-slide__list li::before {
-  content: "■";
+  content: '■';
   color: #e79b9d;
   margin-right: 0.2em;
 }
@@ -627,8 +631,14 @@
   background: #fff;
   opacity: 1;
 }
-.courses-pagination .swiper-pagination-bullet-active {
-  background: #e8abac;
+.courses-pagination .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active {
+  background: #e79b9d;
+}
+.courses-pagination .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active {
+  background: #63c2c7;
+}
+.courses-pagination .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active {
+  background: #b3c96c;
 }
 
 /* =========================
@@ -768,13 +778,19 @@
 .reviews {
   position: relative;
   padding: 117px 0 82px;
-  background-image: url('../images/webp/reviews-bg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
 .reviews__bg-picture {
-  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.reviews__bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 .reviews__inner {
   position: relative;
@@ -902,13 +918,41 @@
    CTA
 ========================= */
 .cta {
-  padding: 85px 0 135px;
+  padding: 125px 0 135px;
 }
 .cta__inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+}
+.cta__official {
+  margin-bottom: 150px;
+}
+.cta__official-lead {
+  font-family: "Kiwi Maru", serif;
+  font-size: 32px;
+  line-height: 1.6;
+  color: #000;
+  margin: 0 0 32px;
+}
+.cta__official-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 558px;
+  max-width: 100%;
+  height: 98px;
+  font-family: "Kiwi Maru", serif;
+  font-size: 42px;
+  color: #fff;
+  background: #b3b3b3;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.cta__official-btn:hover {
+  opacity: 0.8;
 }
 .cta__title {
   font-family: "Kiwi Maru", serif;
@@ -992,7 +1036,7 @@
 .footer__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 140px 20px 100px;
+  padding: 140px 20px 90px;
   color: #fff;
 }
 .footer__title {
@@ -1039,7 +1083,37 @@
 }
 .footer__text--small {
   font-size: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
+}
+.footer__col:first-child > * {
+  margin-bottom: 50px;
+}
+.footer__col:first-child > .footer__heading {
+  margin-bottom: 40px;
+}
+.footer__col:first-child > .footer__name + .footer__text {
+  margin-bottom: 0;
+}
+.footer__col:last-child > .footer__text:not(.footer__text--small) + .footer__text {
+  margin-bottom: 40px;
+}
+.footer__col:last-child > .footer__text--small + .footer__text {
+  margin-bottom: 0;
+}
+.footer__col:first-child > *:last-child {
+  margin-bottom: 0;
+}
+.footer__col:last-child > .footer__heading {
+  margin-bottom: 40px;
+}
+.footer__col:last-child > .footer__name {
+  margin-bottom: 50px;
+}
+.footer__img {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
 }
 .footer__privacy {
   display: block;
@@ -1211,27 +1285,23 @@
     margin-bottom: 20px;
     padding: 0 16px;
   }
-  .courses-swiper .swiper-wrapper {
-    align-items: stretch;
-  }
-  .courses-swiper .swiper-slide {
-    height: auto;
+  .courses-swiper {
+    padding-bottom: 0;
   }
   .course-slide {
     padding: 40px 0 80px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
   }
   .course-slide__title {
     font-size: 29px;
+    margin-bottom: 0;
   }
   .course-slide__subtitle {
     font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
   .course-slide__card {
     width: 90%;
-    margin: 0 auto;
     padding: 20px 10px;
   }
   .course-slide__card--01 {
@@ -1247,6 +1317,9 @@
     font-size: 17px;
     line-height: 1.6;
   }
+  .course-slide__list li {
+    font-size: 14px;
+  }
   .course-slide__img {
     width: 100%;
   }
@@ -1260,7 +1333,7 @@
     right: 2px;
   }
   .courses-pagination {
-    bottom: 90px !important;
+    bottom: 30px !important;
   }
 
   /* --- ADMISSION --- */
@@ -1418,6 +1491,19 @@
   .cta {
     padding: 50px 0 40px;
   }
+  .cta__official {
+    margin-bottom: 86px;
+  }
+  .cta__official-lead {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .cta__official-btn {
+    font-size: 20px;
+    height: 60px;
+    border-radius: 16px;
+  }
   .cta__title {
     font-size: 24px;
     line-height: 1.5;
@@ -1483,6 +1569,10 @@
   .footer__text {
     font-size: 16px;
     line-height: 1.5;
+  }
+  .footer__img {
+    margin-left: auto;
+    margin-right: auto;
   }
   .footer__col:last-child .footer__name {
     font-size: 24px;

@@ -387,3 +387,307 @@
     color: #fff;
   }
 }
+
+// =========================
+// COURSES
+// =========================
+.courses {
+  position: relative;
+  padding: 80px 0 0;
+
+  @media (max-width: 768px) {
+    padding: 40px 0 0;
+  }
+
+  &__inner {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: 'Kiwi Maru', serif;
+    font-weight: normal;
+    font-size: 48px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+      font-size: 29px;
+      margin-bottom: 20px;
+      padding: 0 16px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+}
+
+.courses-swiper {
+  overflow: visible !important;
+  padding-bottom: 50px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 0;
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+}
+
+// Slide
+.course-slide {
+  position: relative;
+  padding: 60px 0 140px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 40px 0 80px;
+  }
+
+  // Hide <picture> bg, use CSS background-image instead
+  > .bg-picture {
+    display: none;
+  }
+
+  &--01 {
+    background-image: url(../images/webp/courses-slide01-bg.webp), url(../images/courses-slide01-bg.png);
+  }
+
+  &--02 {
+    background-image: url(../images/webp/courses-slide02-bg.webp), url(../images/courses-slide02-bg.png);
+  }
+
+  &--03 {
+    background-image: url(../images/webp/courses-slide03-bg.webp), url(../images/courses-slide03-bg.png);
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  &__title {
+    position: relative;
+    font-family: 'Kiwi Maru', serif;
+    font-weight: normal;
+    font-size: 40px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 29px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 24px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      font-size: 17px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding: 20px 10px;
+    }
+
+    &--01 {
+      margin-top: 60px;
+
+      @media (max-width: 768px) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__card-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 60px;
+
+    @media (max-width: 768px) {
+      padding: 16px 20px;
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 24px;
+    color: #fff;
+    padding: 4px 24px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    background: #7381af;
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    width: 100%;
+    font-family: 'Kiwi Maru', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #000;
+
+    @media (max-width: 768px) {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    li {
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+      letter-spacing: -0.02em;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+
+      &::before {
+        content: '■';
+        color: #e79b9d;
+        margin-right: 0.2em;
+      }
+    }
+
+    &--blue li::before {
+      color: #63c2c7;
+    }
+
+    &--green li::before {
+      color: #b3c96c;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 945px;
+    max-width: 100%;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+// Arrows
+.courses-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+
+  img {
+    display: block;
+    width: 36px;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 24px;
+    }
+  }
+
+  &--prev {
+    left: calc(50% - 620px);
+
+    @media (max-width: 768px) {
+      left: 2px;
+    }
+  }
+
+  &--next {
+    right: calc(50% - 620px);
+
+    @media (max-width: 768px) {
+      right: 2px;
+    }
+  }
+}
+
+// Pagination
+.courses-pagination {
+  bottom: 140px !important;
+  top: auto !important;
+
+  @media (max-width: 768px) {
+    bottom: 30px !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active {
+    background: #e79b9d;
+  }
+
+  .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active {
+    background: #63c2c7;
+  }
+
+  .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active {
+    background: #b3c96c;
+  }
+}

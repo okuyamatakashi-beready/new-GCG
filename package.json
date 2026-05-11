@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "sync": "node sync-webp.mjs",
+    "watch": "node sync-webp.mjs --watch"
+  },
   "devDependencies": {
+    "chokidar": "^4.0.3",
     "sharp": "^0.34.5"
   }
 }
