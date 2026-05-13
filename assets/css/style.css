@@ -1208,7 +1208,7 @@
   }
   .concept__inner {
     margin-top: -20px;
-    padding: 60px 16px 40px;
+    padding: 60px 16px 100px;
   }
   .concept__catch {
     margin-bottom: 20px;
@@ -1244,6 +1244,7 @@
   /* --- FEATURES --- */
   .features {
     padding: 80px 0 80px;
+    margin-top: -40px;
   }
   .features__inner {
     padding: 0 16px;
@@ -1290,6 +1291,8 @@
   }
   .course-slide {
     padding: 40px 0 80px;
+    background-size: cover;
+    background-position: center;
   }
   .course-slide__title {
     font-size: 29px;
@@ -1426,6 +1429,10 @@
   /* --- REVIEWS --- */
   .reviews {
     padding: 60px 0 80px;
+  }
+  .reviews__bg {
+    object-fit: cover;
+    object-position: center;
   }
   .reviews__inner {
     padding: 0 19px;

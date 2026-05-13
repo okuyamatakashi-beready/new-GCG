@@ -458,6 +458,8 @@
 
   @media (max-width: 768px) {
     padding: 40px 0 80px;
+    background-size: cover;
+    background-position: center;
   }
 
   // Hide <picture> bg, use CSS background-image instead
